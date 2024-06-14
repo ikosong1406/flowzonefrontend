@@ -1,0 +1,99 @@
+.footerDiv1 {
+  background-color: #b6b6b6;
+  padding-bottom: 20px;
+}
+
+.footerDiv2 {
+  justify-content: space-around;
+  background-color: #b6b6b6;
+  display: flex;
+  padding: 30px;
+}
+
+.logoDiv1 {
+  align-self: center;
+  display: flex;
+  height: 50px;
+  text-decoration: none;
+}
+
+.logoImage1 {
+  width: 50px;
+  height: 50px;
+}
+
+.logoName1 {
+  color: var(--black);
+  margin-left: 5px;
+}
+
+.footerDiv3 {
+  display: grid;
+}
+
+.footerDiv4 {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.legal {
+  color: var(--black);
+  font-family: "Poppins", sans-serif;
+}
+
+.legal1 {
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.copy {
+  text-align: center;
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 925px) {
+  .footerrDiv1 {
+    height: 40px;
+  }
+
+  .footerDiv2 {
+    justify-content: left;
+    display: grid;
+  }
+
+  .logoImage1 {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logoName1 {
+    font-size: 16px;
+  }
+
+  .footerDiv3 {
+    margin-top: 10px;
+  }
+
+  .footerDiv4 {
+    display: flex;
+    justify-content: space-between;
+    width: 30vh;
+  }
+
+  .legal {
+    font-size: 15px;
+  }
+
+  .legal1 {
+    font-size: 12px;
+  }
+
+  .copy {
+    font-size: 5px;
+  }
+}

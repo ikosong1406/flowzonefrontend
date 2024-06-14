@@ -1,0 +1,49 @@
+.chat-app {
+  display: flex;
+  height: 100vh;
+}
+
+.chat-list,
+.chat-messages,
+.chat-detail {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+  width: 50%;
+}
+
+.chat-list.hidden,
+.chat-messages.hidden,
+.chat-detail.hidden {
+  display: none;
+}
+
+.back-button,
+.detail-button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.detail-button {
+  background-color: #28a745;
+}
+
+@media (max-width: 768px) {
+  .chat-app {
+    flex-direction: column;
+  }
+
+  .chat-list,
+  .chat-messages,
+  .chat-detail {
+    flex: none;
+    width: 100%;
+    border-right: none;
+  }
+}

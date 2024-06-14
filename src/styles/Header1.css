@@ -1,0 +1,112 @@
+.head1Div1 {
+  background-color: gainsboro;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  display: flex;
+  padding: 10px;
+  padding-left: 150px;
+  justify-content: space-between;
+}
+
+.logoDiv {
+  align-self: center;
+  display: flex;
+  height: 50px;
+  text-decoration: none;
+}
+
+.logoName {
+  color: var(--black);
+  margin-left: 5px;
+}
+
+.logoImage {
+  width: 25px;
+  height: 40px;
+  align-self: center;
+}
+
+.navList {
+  display: flex;
+}
+
+.navItems {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-left: 20px;
+}
+
+.authLinks {
+  padding-right: 400px;
+  align-self: center;
+}
+
+.signBtn {
+  background-color: #33067b;
+  color: var(--white);
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@media screen and (max-width: 925px) {
+  .Icon {
+    display: inline;
+    position: relative;
+    padding-right: 70px;
+  }
+
+  .head1Div1 {
+    width: 100%;
+    height: 32px;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .logoImage {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logoName {
+    font-size: 12px;
+    margin-left: 0px;
+  }
+
+  .navList {
+    display: flex;
+    margin-right: 20px;
+    margin-left: 25px;
+  }
+
+  .navItems {
+    font-size: 10px;
+    width: 25%;
+  }
+
+  .authLinks {
+    align-self: center;
+    width: 25%;
+  }
+
+  .signBtn {
+    padding: 8px;
+    font-size: 10px;
+    margin-left: 25px;
+  }
+}
