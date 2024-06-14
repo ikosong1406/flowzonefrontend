@@ -8,11 +8,17 @@ const Footer = () => {
   return (
     <div className="footerDiv1">
       <div className="footerDiv2">
-        <div>
+        <div className="footerDiv5">
           <NavLink to="/" className="logoDiv1">
             <img src={logo} className="logoImage1" />
-            <h1 className="logoName1">Flowzone</h1>
+            <h1 className="logoName1">
+              <span style={{ color: "#33067B" }}>Flow</span>Zone
+            </h1>
           </NavLink>
+          <h4>
+            Care about people to transforming their lives and exudes a positives
+            Impressiono believe. fundraising NGO organizations.
+          </h4>
         </div>
 
         <div className="footerDiv4">
@@ -48,7 +54,7 @@ const Footer = () => {
           <div className="footerDiv3">
             <h2 className="legal">Reach Us</h2>
             <Link to="/about" className="legal1">
-              About Us
+              Blogs
             </Link>
           </div>
         </div>

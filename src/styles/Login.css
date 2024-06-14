@@ -8,10 +8,11 @@
 .loginDiv2 {
   width: 35%;
   background-color: var(--white);
-  padding-left: 150px;
+  padding-left: 100px;
   padding-right: 100px;
   padding-top: 57px;
   padding-bottom: 50px;
+  margin-left: 48.6%;
 }
 
 .loginDiv22 {
@@ -54,12 +55,7 @@
 }
 
 .loginDiv23Btn {
-  background: #8a24dd;
-  background: linear-gradient(
-    90deg,
-    rgba(138, 36, 221, 1) 0%,
-    rgba(251, 95, 153, 1) 100%
-  );
+  background-color: #33067b;
   font-size: 14px;
   border-radius: 5px;
   text-decoration: none;

@@ -10,12 +10,14 @@ const Login = () => {
         <div className="loginDiv21">
           <NavLink to="/" className="logoDiv">
             <img src={logo} className="logoImage" />
-            <h1 className="logoName">Flowzone</h1>
+            <h1 className="logoName">
+              <span style={{ color: "#33067B" }}>Flow</span>Zone
+            </h1>
           </NavLink>
         </div>
         <div className="loginDiv22">
           <h1>Welcome Back</h1>
-          <h3>Enter your email and password to login</h3>
+          <h3>Login To Your Account</h3>
         </div>
         <div className="loginDiv23">
           <h3>Email</h3>
@@ -37,7 +39,7 @@ const Login = () => {
             Don't have an account?{" "}
             <span>
               <Link
-                style={{ color: "#8a24dd", textDecoration: "none" }}
+                style={{ color: "#33067B", textDecoration: "none" }}
                 to="/register"
               >
                 Sign Up

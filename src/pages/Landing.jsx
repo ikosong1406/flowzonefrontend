@@ -114,7 +114,9 @@ const Landing = () => {
             <div className="landDiv3">
               <div className="landDiv31">
                 <div className="landDiv311">
-                  <h1>Connect Developers</h1>
+                  <h1>
+                    Connect <span style={{ color: "#33067B" }}>Developers</span>
+                  </h1>
                   <h3>
                     Flowzone connects developers from various roles and skill
                     levels, providing a platform for collaboration and
@@ -148,7 +150,10 @@ const Landing = () => {
                   <img src={gear} alt="" />
                 </div>
                 <div className="landDiv311">
-                  <h1>Facilitate Project Collaboration</h1>
+                  <h1>
+                    Facilitate Project{" "}
+                    <span style={{ color: "#33067B" }}>Collaboration</span>
+                  </h1>
                   <h3>
                     Flowzone facilitate project collaboration by providing a
                     range of tools and features that enable seamless
@@ -182,7 +187,7 @@ const Landing = () => {
               <div className="landDiv41">
                 <h1>
                   What They Say{" "}
-                  <span style={{ color: "rgb(138, 36, 221" }}>About Us</span>
+                  <span style={{ color: "#33067B" }}>About Us</span>
                 </h1>
               </div>
               <div className="landDiv42">
@@ -268,26 +273,28 @@ const Landing = () => {
               </div>
               <div className="landDiv44">
                 <div className="landDiv441">
-                  <h2>Unlock Your Full Potential as a Developer</h2>
-                  <h3>
-                    Don't miss out on this opportunity to take your skills to
-                    the next level. Sign up for Flowzone today and start
-                    building your dream projects, connecting with peers, and
-                    growing your skills. Our platform is designed to help you
-                    succeed, with features like project matching, community
-                    building, and skill development resources. Join our
-                    community of passionate developers and start achieving your
-                    full potential. Sign up now and start flowing!
-                  </h3>
-                  <div className="landDiv4411">
-                    <h3>Your Email Address</h3>
-                    <Link to="/register" className="landDiv31111">
-                      Sign Up Now
-                    </Link>
-                  </div>
+                  <h1>
+                    Whats new at{" "}
+                    <span style={{ color: "#33067B" }}>Flowzone</span>?
+                  </h1>
+                  <Link>See all</Link>
                 </div>
-                <div className="landDiv441">
-                  <img src={team} alt="" />
+                <div className="landDiv442">
+                  <div className="landDiv4421">
+                    <h3>SERVICE</h3>
+                    <hr />
+                    <img src={connect} alt="" />
+                    <h2>How To Deliver a Successful Product Launch</h2>
+                  </div>
+                  <div className="landDiv4421">
+                    <h3>SERVICE</h3>
+                    <hr />
+                    <img src={bulb} alt="" />
+                    <h2>
+                      What Makes an Authenthic Employee Profile, and Why Does It
+                      Matter?
+                    </h2>
+                  </div>
                 </div>
               </div>
             </div>

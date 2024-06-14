@@ -10,12 +10,14 @@ const Register = () => {
         <div className="registerDiv21">
           <NavLink to="/" className="logoDiv">
             <img src={logo} className="logoImage" />
-            <h1 className="logoName">Flowzone</h1>
+            <h1 className="logoName">
+              <span style={{ color: "#33067B" }}>Flow</span>Zone
+            </h1>
           </NavLink>
         </div>
         <div className="registerDiv22">
-          <h1>Welcome</h1>
-          <h3>Enter your informations to register</h3>
+          <h1>Get Started</h1>
+          <h3>Create An Account</h3>
         </div>
         <div className="registerDiv23">
           <h3>First Name</h3>
@@ -42,7 +44,7 @@ const Register = () => {
             Don't have an account?{" "}
             <span>
               <Link
-                style={{ color: "#8a24dd", textDecoration: "none" }}
+                style={{ color: "#33067B", textDecoration: "none" }}
                 to="/login"
               >
                 Login

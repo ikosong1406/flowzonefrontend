@@ -1,5 +1,5 @@
 const Colors = {
-  violet: "#8a24dd",
+  violet: "#33067B",
 };
 
 export default Colors;

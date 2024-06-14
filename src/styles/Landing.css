@@ -268,7 +268,7 @@
 }
 
 .landDiv4 {
-  background-color: var(--gray);
+  background-color: var(--white);
   padding-right: 120px;
   padding-left: 120px;
   padding-bottom: 50px;
@@ -288,7 +288,7 @@
 }
 
 .landDiv421 {
-  background-color: var(--white);
+  background-color: gainsboro;
   padding: 20px;
   width: 55%;
   border-radius: 20px;
@@ -327,13 +327,13 @@
 }
 
 .landDiv42111 h4 {
-  color: #949494;
+  color: #33067b;
   font-family: "Roboto", sans-serif;
   margin-top: -5px;
 }
 
 .landDiv422 {
-  background-color: var(--white);
+  background-color: gainsboro;
   padding: 20px;
   width: 35%;
   border-radius: 20px;
@@ -372,7 +372,7 @@
 }
 
 .landDiv42211 h4 {
-  color: #949494;
+  color: #33067b;
   font-family: "Roboto", sans-serif;
   margin-top: -5px;
 }
@@ -384,7 +384,7 @@
 }
 
 .landDiv431 {
-  background-color: var(--white);
+  background-color: gainsboro;
   padding: 20px;
   width: 27%;
   border-radius: 20px;
@@ -423,27 +423,21 @@
 }
 
 .landDiv43111 h4 {
-  color: #949494;
+  color: #33067b;
   font-family: "Roboto", sans-serif;
   margin-top: -5px;
 }
 
 .landDiv44 {
-  background: #8a24dd;
-  background: linear-gradient(
-    90deg,
-    rgba(138, 36, 221, 1) 0%,
-    rgba(251, 95, 153, 1) 100%
-  );
   padding: 20px;
   border-radius: 20px;
   margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .landDiv441 {
-  padding: 30px;
+  /* padding: 30px; */
+  display: flex;
+  justify-content: space-between;
 }
 
 .landDiv441 h2 {
@@ -471,6 +465,20 @@
 
 .landDiv441 img {
   width: 400px;
+}
+
+.landDiv442 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.landDiv4421 {
+  width: 45%;
+}
+
+.landDiv4421 img {
+  width: 450px;
 }
 
 @media screen and (max-width: 925px) {
