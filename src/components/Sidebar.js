@@ -3,7 +3,7 @@ import "../styles/Sidebar.css";
 import { NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
-import { GiProgression } from "react-icons/gi";
+import { FaProjectDiagram } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
 
@@ -36,7 +36,7 @@ const Sidebar = () => {
           className={({ isActive }) => (isActive ? "active" : "")}
           onClick={() => setShowNav(false)}
         >
-          <GiProgression className="icon" />
+          <FaProjectDiagram className="icon" />
         </NavLink>
         <NavLink
           to="/dashboard/settings"

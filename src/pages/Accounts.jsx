@@ -11,6 +11,15 @@ const Accounts = () => {
         <div className="accountDiv21">1</div>
         <div className="accountDiv22">2</div>
       </div>
+      <div className="accountDiv3">
+        <div className="accountDiv31">
+          <div className="accountDiv312"></div>
+        </div>
+        <div className="accountDiv32">
+          <div className="accountDiv321"></div>
+          <div className="accountDiv322"></div>
+        </div>
+      </div>
     </div>
   );
 };

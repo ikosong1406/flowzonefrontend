@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Header.css";
 import logo from "../images/logo.png";
-import { IoSettings } from "react-icons/io5";
+import { IoLogOut } from "react-icons/io5";
 import { IoNotifications } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 
@@ -20,9 +20,8 @@ const Header = () => {
         </div>
       </div>
       <div className="headerDiv2">
-        <MdEmail />
         <IoNotifications />
-        <IoSettings />
+        <IoLogOut />
       </div>
     </div>
   );
