@@ -1,23 +1,25 @@
 .sideDiv1 {
-  background: var(--purple);
-  width: 10%;
+  background: #33067b;
+  width: 12%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  min-height: 500px;
+  margin-left: 2%;
+  border-radius: 10px;
+  padding-bottom: 10px;
 }
 
 .sideDiv2 {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .sideDiv2 .logo {
   color: var(--white);
-  font-size: 50px;
+  font-size: 20px;
   font-family: "Roboto", sans-serif;
-  rotate: 330deg;
+  border: 1px solid var(--white);
+  padding: 15px;
+  border-radius: 100px;
 }
 
 .sideDiv3 {
@@ -32,25 +34,23 @@
   color: var(--white);
   text-decoration: none;
   margin: 15px 0;
-  transition: color 0.3s;
 }
 
 .sideDiv3 .icon {
   font-size: 24px;
   color: inherit;
-  transition: color 0.3s;
 }
 
 .sideDiv3 a:hover .icon {
   background-color: var(--white);
-  color: var(--purple);
+  color: #33067b;
   padding: 10px;
   border-radius: 10px;
 }
 
 .sideDiv3 a.active .icon {
   background-color: var(--white);
-  color: var(--purple);
+  color: #33067b;
   padding: 10px;
   border-radius: 10px;
 }
@@ -58,7 +58,6 @@
 .sideDiv3 span {
   font-size: 24px;
   color: #4d4d4e;
-  transition: color 0.3s;
 }
 
 .sideDiv3 span:hover {

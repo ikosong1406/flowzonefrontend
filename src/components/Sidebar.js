@@ -5,6 +5,7 @@ import { FaHome } from "react-icons/fa";
 import { AiFillMessage } from "react-icons/ai";
 import { GiProgression } from "react-icons/gi";
 import { IoSettings } from "react-icons/io5";
+import { FaUser } from "react-icons/fa6";
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -12,7 +13,7 @@ const Sidebar = () => {
   return (
     <div className="sideDiv1">
       <div className="sideDiv2">
-        <h1 className="logo">F</h1>
+        <h1 className="logo">AI</h1>
       </div>
       <div className="sideDiv3">
         <NavLink
@@ -49,7 +50,7 @@ const Sidebar = () => {
           className={({ isActive }) => (isActive ? "active" : "")}
           onClick={() => setShowNav(false)}
         >
-          <span className="icon">AI</span>
+          <FaUser className="icon" />
         </NavLink>
       </div>
     </div>

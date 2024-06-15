@@ -25,14 +25,6 @@ const App = () => {
     }, 1000);
   }, []);
 
-  // const Layout = ({ children }) => (
-  //   <>
-  //     <Header />
-  //     {children}
-  //     <Footer />
-  //   </>
-  // );
-
   const Layout1 = ({ children }) => (
     <>
       <Header1 />

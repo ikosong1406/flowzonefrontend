@@ -1,0 +1,39 @@
+.headerMain {
+  background-color: var(--white);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerDiv1 {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.headerDiv11 {
+  display: flex;
+  margin-left: 40px;
+}
+
+.headerDiv11 img {
+  width: 20px;
+  height: 30px;
+  align-self: center;
+}
+
+.headerDiv11 h1 {
+  align-self: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.headerDiv2 {
+  width: 15%;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #33067b;
+}
