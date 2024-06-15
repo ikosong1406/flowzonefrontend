@@ -2,6 +2,9 @@ import React from "react";
 import "../styles/Register.css";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../images/logo.png";
+import { FaUser } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { GiPadlock } from "react-icons/gi";
 
 const Register = () => {
   return (
@@ -20,15 +23,30 @@ const Register = () => {
           <h3>Create An Account</h3>
         </div>
         <div className="registerDiv23">
-          <h3>First Name</h3>
+          <h3>
+            <FaUser />
+            <span style={{ marginLeft: 10 }}>First Name</span>
+          </h3>
           <input type="text" name="" id="" />
-          <h3>Last Name</h3>
+          <h3>
+            <FaUser />
+            <span style={{ marginLeft: 10 }}>Last Name</span>
+          </h3>
           <input type="text" name="" id="" />
-          <h3>Email</h3>
+          <h3>
+            <MdEmail />
+            <span style={{ marginLeft: 10 }}>Email</span>
+          </h3>
           <input type="text" name="" id="" />
-          <h3>Password</h3>
+          <h3>
+            <GiPadlock />
+            <span style={{ marginLeft: 10 }}>Password</span>
+          </h3>
           <input type="text" name="" id="" />
-          <h3>Confirm Password</h3>
+          <h3>
+            <GiPadlock />
+            <span style={{ marginLeft: 10 }}>Confirm Password</span>
+          </h3>
           <input type="text" name="" id="" />
           <Link to="/register" className="registerDiv23Btn">
             <h3>REGISTER</h3>

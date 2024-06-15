@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/Login.css";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../images/logo.png";
+import { MdEmail } from "react-icons/md";
+import { GiPadlock } from "react-icons/gi";
 
 const Login = () => {
   return (
@@ -20,9 +22,15 @@ const Login = () => {
           <h3>Login To Your Account</h3>
         </div>
         <div className="loginDiv23">
-          <h3>Email</h3>
+          <h3>
+            <MdEmail />
+            <span style={{ marginLeft: 10 }}>Email</span>
+          </h3>
           <input type="text" name="" id="" />
-          <h3>Password</h3>
+          <h3>
+            <GiPadlock />
+            <span style={{ marginLeft: 10 }}>Password</span>
+          </h3>
           <input type="text" name="" id="" />
           <h4>Forgot Password ?</h4>
           <Link to="/dashboard" className="loginDiv23Btn">

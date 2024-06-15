@@ -36,7 +36,7 @@
 }
 
 .loginDiv23 h3 {
-  color: var(--black);
+  color: #33067b;
   font-family: "Roboto", sans-serif;
 }
 
@@ -44,7 +44,7 @@
   padding: 12px;
   border-radius: 5px;
   width: 95%;
-  border-width: 1px;
+  border: 1px solid #33067b;
   background-color: var(--white);
 }
 
