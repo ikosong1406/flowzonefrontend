@@ -1,0 +1,48 @@
+.homeDiv1 {
+  width: 100%;
+}
+
+.homeDiv1 h1 {
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+}
+
+.homeDiv2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.homeDiv21 {
+  width: 65%;
+}
+
+.homeDiv211 {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  margin-top: -15px;
+}
+
+.homeDiv212 {
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.homeDiv22 {
+  width: 25%;
+  margin-right: 2%;
+}
+
+.homeDiv221 {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.homeDiv222 {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}

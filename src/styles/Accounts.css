@@ -1,29 +1,25 @@
-.chatDiv1 {
+.accountDiv1 {
   width: 100%;
 }
 
-.chatDiv1 h1 {
+.accountDiv1 h1 {
   color: var(--black);
   font-family: "Roboto", sans-serif;
 }
 
-.chatDiv2 {
-  width: 100%;
+.accountDiv2 {
+  width: 92%;
   display: flex;
   justify-content: space-between;
-}
-
-.chatDiv21 {
-  width: 25%;
   background-color: var(--white);
   padding: 20px;
   border-radius: 10px;
 }
 
-.chatDiv22 {
-  width: 63%;
-  background-color: var(--white);
-  padding: 20px;
-  border-radius: 10px;
-  margin-right: 2%;
+.accountDiv21 {
+  width: 50%;
+}
+
+.accountDiv22 {
+  width: 40%;
 }
