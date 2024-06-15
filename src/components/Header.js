@@ -3,7 +3,7 @@ import "../styles/Header.css";
 import logo from "../images/logo.png";
 import { IoLogOut } from "react-icons/io5";
 import { IoNotifications } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -17,6 +17,7 @@ const Header = () => {
         </div>
         <div className="headerDiv12">
           <input />
+          <FaSearch style={{ alignSelf: "center" }} />
         </div>
       </div>
       <div className="headerDiv2">

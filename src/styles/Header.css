@@ -8,7 +8,7 @@
 .headerDiv1 {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 70%;
 }
 
 .headerDiv11 {
@@ -27,6 +27,24 @@
   font-family: "Roboto", sans-serif;
   font-size: 17px;
   margin-left: 10px;
+}
+
+.headerDiv12 {
+  align-self: center;
+  width: 50%;
+  border: 1px solid #33067b;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding-right: 2%;
+}
+
+.headerDiv12 input {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid #33067b;
+  border-radius: 10px;
 }
 
 .headerDiv2 {

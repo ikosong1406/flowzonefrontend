@@ -1,0 +1,29 @@
+.progressDiv1 {
+  width: 100%;
+}
+
+.progressDiv1 h1 {
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+}
+
+.progressDiv2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressDiv21 {
+  width: 55%;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.progressDiv22 {
+  width: 30%;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 2%;
+}

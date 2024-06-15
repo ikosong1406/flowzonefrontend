@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div style={{ backgroundColor: "gainsboro" }}>
       <Header />
-      <div style={{ display: "flex", marginTop: 20, paddingBottom: 10 }}>
+      <div style={{ display: "flex", marginTop: 20, paddingBottom: 20 }}>
         <Sidebar />
         <div className="page">
           <Outlet />

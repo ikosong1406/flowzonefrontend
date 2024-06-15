@@ -38,13 +38,13 @@ const Sidebar = () => {
         >
           <FaProjectDiagram className="icon" />
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/dashboard/settings"
           className={({ isActive }) => (isActive ? "active" : "")}
           onClick={() => setShowNav(false)}
         >
           <IoSettings className="icon" />
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/dashboard/account"
           className={({ isActive }) => (isActive ? "active" : "")}
