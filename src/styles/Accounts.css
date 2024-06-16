@@ -18,10 +18,53 @@
 
 .accountDiv21 {
   width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accountDiv211 {
+  width: 40%;
+}
+
+.accountDiv211 img {
+  width: 200px;
+}
+
+.accountDiv212 {
+  width: 50%;
+  color: var(--black);
+}
+
+.accountDiv212 h3 {
+  font-weight: 600;
 }
 
 .accountDiv22 {
   width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accounDiv221 {
+  width: 70%;
+  color: var(--black);
+}
+
+.accountDiv2211 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -7px;
+}
+
+.accountDiv2211 h3 {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.accounDiv222 {
+  width: 10%;
+  font-size: 20px;
+  color: var(--black);
 }
 
 .accountDiv3 {
@@ -39,7 +82,6 @@
 }
 
 .accountDiv32 {
-  width: 25%;
   margin-right: 2%;
 }
 
