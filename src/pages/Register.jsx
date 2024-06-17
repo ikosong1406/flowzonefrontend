@@ -9,6 +9,7 @@ import { GiPadlock } from "react-icons/gi";
 const Register = () => {
   return (
     <div className="registerDiv1">
+      <div className="registerDiv3"></div>
       <div className="registerDiv2">
         <div className="registerDiv21">
           <NavLink to="/" className="logoDiv">

@@ -8,6 +8,7 @@ import { GiPadlock } from "react-icons/gi";
 const Login = () => {
   return (
     <div className="loginDiv1">
+      <div className="loginDiv3"></div>
       <div className="loginDiv2">
         <div className="loginDiv21">
           <NavLink to="/" className="logoDiv">

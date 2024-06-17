@@ -1,8 +1,15 @@
 .registerDiv1 {
-  background-image: url(../images/loginBack.jpg);
+  display: flex;
+  width: 100%;
+}
+
+.registerDiv3 {
+  background-image: url(../images/team.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 50%;
+  height: 150vh;
 }
 
 .registerDiv2 {
@@ -10,9 +17,8 @@
   background-color: var(--white);
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 40px;
-  padding-bottom: 50px;
-  margin-left: 48.6%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .registerDiv22 {

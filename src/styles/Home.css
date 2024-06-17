@@ -27,6 +27,44 @@
 .homeDiv212 {
   background-color: var(--white);
   padding: 20px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.homeDiv2121 {
+}
+
+.homeDiv2121 img {
+  width: 50px;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 100px;
+}
+
+.homeDiv2122 {
+  margin-left: 10px;
+  margin-top: -20px;
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+}
+
+.homeDiv21221 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.homeDiv21222 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -5px;
+}
+
+.homeDiv21222 h3 {
+  background-color: #c8c8c8;
+  padding: 7px;
+  border-radius: 10px;
 }
 
 .homeDiv22 {

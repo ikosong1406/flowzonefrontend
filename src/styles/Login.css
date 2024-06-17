@@ -1,8 +1,15 @@
 .loginDiv1 {
-  background-image: url(../images/loginBack.jpg);
+  display: flex;
+  width: 100%;
+}
+
+.loginDiv3 {
+  background-image: url(../images/team.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 50%;
+  height: 100vh;
 }
 
 .loginDiv2 {
@@ -10,9 +17,8 @@
   background-color: var(--white);
   padding-left: 100px;
   padding-right: 100px;
-  padding-top: 57px;
-  padding-bottom: 50px;
-  margin-left: 48.6%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .loginDiv22 {
