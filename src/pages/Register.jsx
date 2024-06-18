@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import "../styles/Register.css";
 import { NavLink, Link } from "react-router-dom";
+import "../styles/Register.css";
 import logo from "../images/logo.png";
 import { FaUser } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { GiPadlock } from "react-icons/gi";
 import axios from "axios";
 import BackendApi from "../Api/BackendApi";
-import Modal from "react-modal";
-import { IoClose } from "react-icons/io5";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const [passcode, setPasscode] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -23,18 +21,18 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!firstname || !lastname || !email || !password || !confirmPassword) {
-      alert("Please fill out all fields");
+      toast.error("Please fill out all fields");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
     if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address");
+      toast.error("Please enter a valid email address");
       return;
     }
 
@@ -43,42 +41,30 @@ const Register = () => {
       lastname,
       email,
       password,
-      role: "user",
     };
 
     try {
       const response = await axios.post(`${BackendApi}/register`, userData);
-      setIsModalOpen(true);
-      setFirstname("");
-      setLastname("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
+      const { status, data } = response.data;
+
+      if (status === "ok") {
+        toast.success(data);
+        setFirstname("");
+        setLastname("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+      } else {
+        toast.error(data);
+      }
     } catch (error) {
-      alert("Registration error", error);
+      toast.error("Registration error: " + error.message);
     }
-  };
-
-  const codeVerification = async (e) => {
-    try {
-      const response = await axios.post(`${BackendApi}/verifyEmail`, passcode);
-      alert("Account created, please Login");
-    } catch (error) {
-      alert("Verification error", error);
-    }
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setPasscode(Array(4).fill(""));
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
   };
 
   return (
     <div className="registerDiv1">
+      <ToastContainer />
       <div className="registerDiv3"></div>
       <div className="registerDiv2">
         <div className="registerDiv21">
@@ -119,7 +105,7 @@ const Register = () => {
             <span style={{ marginLeft: 10 }}>Email</span>
           </h3>
           <input
-            tytype="text"
+            type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
