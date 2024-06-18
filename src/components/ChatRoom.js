@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import EmojiPicker from "@emoji-mart/react";
 import { FaPaperclip } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import cube from "../images/cube.png";
@@ -8,7 +7,6 @@ import { FaSearch } from "react-icons/fa";
 
 const ChatRoom = ({ group, messages, onSendMessage }) => {
   const [message, setMessage] = useState("");
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -72,12 +70,7 @@ const ChatRoom = ({ group, messages, onSendMessage }) => {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type a message"
         />
-        <button onClick={() => setShowEmojiPicker(!showEmojiPicker)}>😊</button>
-        {showEmojiPicker && (
-          <EmojiPicker
-            onEmojiSelect={(emoji) => setMessage(message + emoji.native)}
-          />
-        )}
+
         <IoMdSend className="send-icon" onClick={handleSend} />
       </div>
     </div>
