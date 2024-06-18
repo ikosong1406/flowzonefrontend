@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Accounts.css";
-import person from "../images/person.jpeg";
+import person from "../images/usericon.jpeg";
 import { IoPricetag } from "react-icons/io5";
 import { FaEdit, FaFilePdf, FaCalendarAlt } from "react-icons/fa";
 import { MdEmail, MdOutlineWork } from "react-icons/md";
 import Modal from "react-modal";
+import axios from "axios";
+import BackendApi from "../Api/BackendApi";
+import { getUserToken } from "../Api/storage";
 
 const portfolioItemsData = [
   {
@@ -43,14 +46,44 @@ const Accounts = () => {
   const [editUserModalOpen, setEditUserModalOpen] = useState(false);
   const [editPortfolioModalOpen, setEditPortfolioModalOpen] = useState(false);
   const [editSkillsModalOpen, setEditSkillsModalOpen] = useState(false);
-  const [userDetails, setUserDetails] = useState({
-    name: "Alexander Virtuous Ikosong",
-    email: "email@gmail.com",
-    industry: "Web Development",
-    dob: "14 June 2004",
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, repudiandae! Accusamus laborum voluptatum eius dignissimos minima unde labore ad nesciunt.",
-    attachment: "alexandra.pdf",
-  });
+  const [userData, setUserData] = useState({});
+  const [token, setToken] = useState(null);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const userToken = await getUserToken();
+      setToken(userToken);
+      if (userToken) {
+        await getData(userToken);
+      }
+    } catch (error) {
+      console.error("Error retrieving token:", error);
+    }
+  };
+
+  const getData = async (userToken) => {
+    const data = { token: userToken };
+    try {
+      const response = await axios.post(`${BackendApi}/userdata`, data);
+      const fetchedData = response.data.data;
+      setUserData(fetchedData);
+      setRefreshing(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Check if userData exists and has firstname before accessing it
+    if (userData && userData.firstname) {
+      console.log("First Name:", userData.firstname);
+    }
+  }, [userData]); // Run this effect whenever userData changes
 
   const openModal = (portfolio) => {
     setSelectedPortfolio(portfolio);
@@ -90,10 +123,6 @@ const Accounts = () => {
 
   const handleUserDetailsChange = (e) => {
     const { name, value } = e.target;
-    setUserDetails((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
   };
 
   const handleSkillsChange = (index, value) => {
@@ -130,14 +159,16 @@ const Accounts = () => {
             <img src={person} alt="" />
           </div>
           <div className="accountDiv212">
-            <h2>{userDetails.name}</h2>
+            <h2>
+              {userData.firstname} {userData.lastname}
+            </h2>
             <p style={{ color: "#a09e9e", marginTop: -5 }}>
               <IoPricetag />
-              <span style={{ marginLeft: 10 }}>Full-stack Developer</span>
+              <span style={{ marginLeft: 10 }}>none</span>
             </p>
             <h3>Collaboration Done: 26</h3>
             <h3>Bio:</h3>
-            <p style={{ marginTop: -10 }}>{userDetails.bio}</p>
+            <p style={{ marginTop: -10 }}>none</p>
           </div>
         </div>
         <div className="accountDiv22">
@@ -148,28 +179,28 @@ const Accounts = () => {
                 <MdEmail style={{ marginRight: 5 }} />
                 Email:
               </h3>
-              <h3>{userDetails.email}</h3>
+              <h3>{userData.email}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <MdOutlineWork style={{ marginRight: 5 }} />
                 Industry:
               </h3>
-              <h3>{userDetails.industry}</h3>
+              <h3>none</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaCalendarAlt style={{ marginRight: 5 }} />
                 Date of Birth:
               </h3>
-              <h3>{userDetails.dob}</h3>
+              <h3>none</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaFilePdf style={{ marginRight: 5, color: "red" }} />
                 Attachment:
               </h3>
-              <h3>{userDetails.attachment}</h3>
+              <h3>none</h3>
             </div>
           </div>
           <div className="accounDiv222" onClick={openEditUserModal}>
@@ -244,7 +275,9 @@ const Accounts = () => {
             >
               View Project
             </a>
-            <button onClick={closeModal}>Close</button>
+            <button onClick={closeModal} style={{ backgroundColor: "red" }}>
+              Close
+            </button>
           </div>
         </Modal>
       )}
@@ -257,7 +290,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="name"
-                value={userDetails.name}
+                // value={userDetails.name}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -266,7 +299,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="email"
-                value={userDetails.email}
+                // value={userDetails.email}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -275,7 +308,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="industry"
-                value={userDetails.industry}
+                // value={userDetails.industry}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -284,7 +317,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="dob"
-                value={userDetails.dob}
+                // value={userDetails.dob}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -292,7 +325,7 @@ const Accounts = () => {
               Bio:
               <textarea
                 name="bio"
-                value={userDetails.bio}
+                // value={userDetails.bio}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -301,12 +334,17 @@ const Accounts = () => {
               <input
                 type="text"
                 name="attachment"
-                value={userDetails.attachment}
+                // value={userDetails.attachment}
                 onChange={handleUserDetailsChange}
               />
             </label>
           </form>
-          <button onClick={closeEditUserModal}>Close</button>
+          <button
+            onClick={closeEditUserModal}
+            style={{ backgroundColor: "red" }}
+          >
+            Close
+          </button>
         </div>
       </Modal>
       <Modal
@@ -359,8 +397,18 @@ const Accounts = () => {
               />
             </label>
           </form>
-          <button onClick={savePortfolioChanges}>Save Changes</button>
-          <button onClick={closeEditPortfolioModal}>Close</button>
+          <button
+            onClick={savePortfolioChanges}
+            style={{ backgroundColor: "green" }}
+          >
+            Save Changes
+          </button>
+          <button
+            onClick={closeEditPortfolioModal}
+            style={{ backgroundColor: "red" }}
+          >
+            Close
+          </button>
         </div>
       </Modal>
       <Modal isOpen={editSkillsModalOpen} onRequestClose={closeEditSkillsModal}>
@@ -378,7 +426,12 @@ const Accounts = () => {
               </label>
             ))}
           </form>
-          <button onClick={closeEditSkillsModal}>Close</button>
+          <button
+            onClick={closeEditSkillsModal}
+            style={{ backgroundColor: "red" }}
+          >
+            Close
+          </button>
         </div>
       </Modal>
     </div>

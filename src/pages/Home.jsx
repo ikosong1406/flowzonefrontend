@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import cube from "../images/cube.png";
 import {
@@ -8,8 +8,52 @@ import {
   IoPerson,
   IoPersonAdd,
 } from "react-icons/io5";
+import axios from "axios";
+import BackendApi from "../Api/BackendApi";
+import { getUserToken } from "../Api/storage";
 
 const Home = () => {
+  const [userData, setUserData] = useState({});
+  const [token, setToken] = useState(null);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const userToken = await getUserToken();
+      setToken(userToken);
+      if (userToken) {
+        await getData(userToken);
+      }
+    } catch (error) {
+      console.error("Error retrieving token:", error);
+    }
+  };
+
+  const getData = async (userToken) => {
+    const data = { token: userToken };
+    try {
+      const response = await axios.post(`${BackendApi}/userdata`, data);
+      const fetchedData = response.data.data;
+      setUserData(fetchedData);
+      setRefreshing(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // console.log(userData); // This will log the updated userData
+  }, [userData]); // Run this effect whenever userData changes;
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await getData(token);
+  };
+
   const [showMoreDetails, setShowMoreDetails] = useState(false);
 
   const handleMoreDetailsClick = () => {
@@ -19,7 +63,9 @@ const Home = () => {
   return (
     <div className="homeMain">
       <div className="homeDiv1">
-        <h1>Welcome, Alexander Virtuous Ikosong</h1>
+        <h1>
+          Welcome, {userData.firstname} {userData.lastname}
+        </h1>
       </div>
       <div className="homeDiv2">
         <div className="homeDiv21">
