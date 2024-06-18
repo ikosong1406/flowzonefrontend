@@ -123,17 +123,17 @@ const Home = () => {
           <div className="homeDiv221">
             <h3>Activity Feed</h3>
             <ul className="activityFeed">
-              <li>
+              <li style={{ backgroundColor: "skyblue" }}>
                 <IoMail style={{ marginRight: 5 }} /> Message Notification
               </li>
-              <li>
+              <li style={{ backgroundColor: "pink" }}>
                 <IoSettings style={{ marginRight: 5 }} /> System Preference
                 Update
               </li>
-              <li>
+              <li style={{ backgroundColor: "lightgreen" }}>
                 <IoPerson style={{ marginRight: 5 }} /> Update on Profile
               </li>
-              <li>
+              <li style={{ backgroundColor: "violet" }}>
                 <IoPersonAdd style={{ marginRight: 5 }} /> Invite a Friend
               </li>
             </ul>

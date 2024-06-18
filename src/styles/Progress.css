@@ -1,5 +1,7 @@
 .progressDiv1 {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .progressDiv1 h1 {
@@ -7,10 +9,23 @@
   font-family: "Roboto", sans-serif;
 }
 
+.progressDiv1 button {
+  margin-right: 2%;
+  height: 40px;
+  font-weight: 700;
+  align-self: center;
+  border-radius: 10px;
+  border: none;
+  background-color: #0070c0;
+  font-size: 14px;
+  color: white;
+}
+
 .progressDiv2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .progressDiv21 {

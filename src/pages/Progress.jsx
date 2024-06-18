@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaPlusSquare } from "react-icons/fa";
 import ProjectModal from "../components/ProjectModal"; // Import your modal component for creating a project
 import TaskManagement from "../components/TaskManagement"; // Import your task management component
 import InviteModal from "../components/InviteModal"; // Import your modal component for inviting users
@@ -40,37 +41,40 @@ const Progress = () => {
 
   return (
     <div className="progressMain">
-      {/* Button to create a new project */}
-      <button onClick={handleCreateProject}>Create New Project</button>
-
-      {/* List of projects */}
       <div className="progressDiv1">
         <h1>Projects</h1>
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            onClick={() => navigateToProjectDashboard(project.id)}
-          >
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-          </div>
-        ))}
+        <button onClick={handleCreateProject}>
+          <FaPlusSquare style={{ marginRight: 10, alignSelf: "center" }} />
+          Create New Project
+        </button>
       </div>
 
-      {/* List of project invites */}
       <div className="progressDiv2">
-        <h1>Invited Collaborations</h1>
-        {invites.map((invite) => (
-          <div key={invite.id}>
-            <p>{invite.projectName}</p>
-            <button onClick={() => handleAcceptInvite(invite.id)}>
-              Accept
-            </button>
-            <button onClick={() => handleDeclineInvite(invite.id)}>
-              Decline
-            </button>
-          </div>
-        ))}
+        <div className="progressDiv21">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => navigateToProjectDashboard(project.id)}
+            >
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="progressDiv22">
+          <h3>Invited Collaborations</h3>
+          {invites.map((invite) => (
+            <div key={invite.id}>
+              <p>{invite.projectName}</p>
+              <button onClick={() => handleAcceptInvite(invite.id)}>
+                Accept
+              </button>
+              <button onClick={() => handleDeclineInvite(invite.id)}>
+                Decline
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Project Modal */}
