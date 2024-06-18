@@ -1,25 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Chat.css";
 import ChatRoom from "../components/ChatRoom";
 import GroupList from "../components/GroupList";
 
 const Chat = () => {
-  const [groups] = React.useState([
-    { id: 1, name: "Group 1" },
-    { id: 2, name: "Group 2" },
-    { id: 3, name: "Group 3" },
+  const [groups] = useState([
+    {
+      id: 1,
+      name: "Group 1",
+      category: "Web Design",
+      lastMessage: "I understand, coach.",
+      messages: [
+        { sender: "user1", text: "Hello!" },
+        { sender: "me", text: "Hi!" },
+        { sender: "user1", text: "I understand, coach." },
+      ],
+    },
+    {
+      id: 2,
+      name: "Group 2",
+      category: "Development",
+      lastMessage: "See you tomorrow.",
+      messages: [{ sender: "user2", text: "See you tomorrow." }],
+    },
+    {
+      id: 3,
+      name: "Group 3",
+      category: "Marketing",
+      lastMessage: "Great job, team!",
+      messages: [{ sender: "user3", text: "Great job, team!" }],
+    },
   ]);
 
-  const [selectedGroup, setSelectedGroup] = React.useState(null);
-  const [messages, setMessages] = React.useState([]);
+  const [selectedGroup, setSelectedGroup] = useState(null);
+  const [messages, setMessages] = useState([]);
 
   const handleSelectGroup = (group) => {
     setSelectedGroup(group);
-    // Fetch group messages from API or set default messages
-    setMessages([
-      { sender: "user1", text: "Hello!" },
-      { sender: "me", text: "Hi!" },
-    ]);
+    setMessages(group.messages);
   };
 
   const handleSendMessage = (message) => {

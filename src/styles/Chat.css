@@ -23,73 +23,80 @@
 .chatDiv22 {
   width: 63%;
   background-color: var(--white);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   margin-right: 2%;
+  height: 77vh;
 }
 
-.group-list div {
-  padding: 10px;
-  cursor: pointer;
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #252626;
   border-bottom: 1px solid #ccc;
 }
 
-.group-list div:hover {
-  background-color: #e0e0e0;
-}
-
-.chat-room {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .messages {
-  flex-grow: 1;
   overflow-y: auto;
-  margin-bottom: 10px;
+  height: 63vh;
 }
 
 .message {
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  max-width: 30%;
+  margin-top: 20px;
 }
 
 .my-message {
-  background-color: #d0ffd0;
+  background-color: #0040ff;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.other-message {
+  background-color: gainsboro;
+  color: black;
 }
 
 .message-input {
   display: flex;
   align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
 }
 
 .message-input input {
-  flex-grow: 1;
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.attachment-icon,
+.send-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #33067b;
+}
+
+.attachment-icon {
   margin-right: 10px;
 }
 
-.message-input button {
-  padding: 10px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.message-input button:hover {
-  background-color: #0056b3;
+.send-icon {
+  margin-left: 10px;
 }
 
 .select-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 24px;
-  color: #999;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
 }
