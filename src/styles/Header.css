@@ -13,7 +13,7 @@
 
 .headerDiv11 {
   display: flex;
-  margin-left: 40px;
+  margin-left: 0px;
 }
 
 .headerDiv11 img {
@@ -38,6 +38,7 @@
   justify-content: space-between;
   border-radius: 10px;
   padding-right: 2%;
+  margin-right: 10%;
 }
 
 .headerDiv12 input {
@@ -52,7 +53,42 @@
   display: flex;
   align-self: center;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 25px;
   color: #0070c0;
   margin-right: 2%;
+}
+
+.notificationIndicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
