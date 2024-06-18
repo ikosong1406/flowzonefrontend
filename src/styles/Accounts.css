@@ -1,3 +1,4 @@
+/* Main CSS */
 .accountDiv1 {
   width: 100%;
 }
@@ -65,6 +66,7 @@
   width: 10%;
   font-size: 20px;
   color: var(--black);
+  cursor: pointer;
 }
 
 .accountDiv3 {
@@ -81,8 +83,40 @@
   border-radius: 10px;
 }
 
+.portfolioHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolioItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioItem {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolioItem:hover {
+  background-color: #f0f0f0;
+}
+
+.editIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .accountDiv32 {
-  margin-right: 2%;
+  width: 30%;
 }
 
 .accountDiv321 {
@@ -91,9 +125,84 @@
   border-radius: 10px;
 }
 
+.skillsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountDiv321 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accountDiv321 ul li {
+  margin-bottom: 5px;
+}
+
 .accountDiv322 {
   background-color: var(--white);
   padding: 20px;
   border-radius: 10px;
   margin-top: 30px;
+}
+
+/* Modal CSS */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  outline: none;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+}
+
+.modalContent form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalContent form label {
+  margin-bottom: 10px;
+}
+
+.modalContent form input,
+.modalContent form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modalContent form textarea {
+  resize: vertical;
+}
+
+.modalContent button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modalContent button:hover {
+  background-color: darken(var(--primary-color), 10%);
 }

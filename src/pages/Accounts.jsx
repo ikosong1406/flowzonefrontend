@@ -1,14 +1,124 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Accounts.css";
 import person from "../images/person.jpeg";
 import { IoPricetag } from "react-icons/io5";
-import { FaEdit } from "react-icons/fa";
-import { FaFilePdf } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaCalendarAlt } from "react-icons/fa";
-import { MdOutlineWork } from "react-icons/md";
+import { FaEdit, FaFilePdf, FaCalendarAlt } from "react-icons/fa";
+import { MdEmail, MdOutlineWork } from "react-icons/md";
+import Modal from "react-modal";
+
+const portfolioItemsData = [
+  {
+    id: 1,
+    title: "Project One",
+    image: "project1.jpg",
+    link: "https://example.com/project1",
+    description: "A brief description of Project One.",
+    technologies: ["React", "Node.js", "CSS"],
+  },
+  {
+    id: 2,
+    title: "Project Two",
+    image: "project2.jpg",
+    link: "https://example.com/project2",
+    description: "A brief description of Project Two.",
+    technologies: ["Python", "Django", "Bootstrap"],
+  },
+];
+
+const skillsData = [
+  "JavaScript",
+  "React",
+  "Node.js",
+  "Python",
+  "Django",
+  "CSS",
+];
+const recommendations = 5;
 
 const Accounts = () => {
+  const [portfolioItems, setPortfolioItems] = useState(portfolioItemsData);
+  const [skills, setSkills] = useState(skillsData);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedPortfolio, setSelectedPortfolio] = useState(null);
+  const [editUserModalOpen, setEditUserModalOpen] = useState(false);
+  const [editPortfolioModalOpen, setEditPortfolioModalOpen] = useState(false);
+  const [editSkillsModalOpen, setEditSkillsModalOpen] = useState(false);
+  const [userDetails, setUserDetails] = useState({
+    name: "Alexander Virtuous Ikosong",
+    email: "email@gmail.com",
+    industry: "Web Development",
+    dob: "14 June 2004",
+    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, repudiandae! Accusamus laborum voluptatum eius dignissimos minima unde labore ad nesciunt.",
+    attachment: "alexandra.pdf",
+  });
+
+  const openModal = (portfolio) => {
+    setSelectedPortfolio(portfolio);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedPortfolio(null);
+  };
+
+  const openEditUserModal = () => {
+    setEditUserModalOpen(true);
+  };
+
+  const closeEditUserModal = () => {
+    setEditUserModalOpen(false);
+  };
+
+  const openEditPortfolioModal = (portfolio) => {
+    setSelectedPortfolio(portfolio);
+    setEditPortfolioModalOpen(true);
+  };
+
+  const closeEditPortfolioModal = () => {
+    setEditPortfolioModalOpen(false);
+    setSelectedPortfolio(null);
+  };
+
+  const openEditSkillsModal = () => {
+    setEditSkillsModalOpen(true);
+  };
+
+  const closeEditSkillsModal = () => {
+    setEditSkillsModalOpen(false);
+  };
+
+  const handleUserDetailsChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSkillsChange = (index, value) => {
+    const updatedSkills = skills.map((skill, i) =>
+      i === index ? value : skill
+    );
+    setSkills(updatedSkills);
+  };
+
+  const handlePortfolioChange = (e) => {
+    const { name, value } = e.target;
+    setSelectedPortfolio((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const savePortfolioChanges = () => {
+    const updatedPortfolioItems = portfolioItems.map((item) =>
+      item.id === selectedPortfolio.id ? selectedPortfolio : item
+    );
+    setPortfolioItems(updatedPortfolioItems);
+    closeEditPortfolioModal();
+  };
+
   return (
     <div className="accountMain">
       <div className="accountDiv1">
@@ -20,18 +130,14 @@ const Accounts = () => {
             <img src={person} alt="" />
           </div>
           <div className="accountDiv212">
-            <h2>Alexander Virtuous Ikosong</h2>
+            <h2>{userDetails.name}</h2>
             <p style={{ color: "#a09e9e", marginTop: -5 }}>
               <IoPricetag />
               <span style={{ marginLeft: 10 }}>Full-stack Developer</span>
             </p>
             <h3>Collaboration Done: 26</h3>
             <h3>Bio:</h3>
-            <p style={{ marginTop: -10 }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-              repudiandae! Accusamus laborum voluptatum eius dignissimos minima
-              unde labore ad nesciunt.
-            </p>
+            <p style={{ marginTop: -10 }}>{userDetails.bio}</p>
           </div>
         </div>
         <div className="accountDiv22">
@@ -42,48 +148,239 @@ const Accounts = () => {
                 <MdEmail style={{ marginRight: 5 }} />
                 Email:
               </h3>
-              <h3>email@gmail.com</h3>
+              <h3>{userDetails.email}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <MdOutlineWork style={{ marginRight: 5 }} />
                 Industry:
               </h3>
-              <h3>Web Development</h3>
+              <h3>{userDetails.industry}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaCalendarAlt style={{ marginRight: 5 }} />
                 Date of Birth:
               </h3>
-              <h3>14 June 2004</h3>
+              <h3>{userDetails.dob}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaFilePdf style={{ marginRight: 5, color: "red" }} />
                 Attachment:
               </h3>
-              <h3>alexandra.pdf</h3>
+              <h3>{userDetails.attachment}</h3>
             </div>
           </div>
-          <div className="accounDiv222">
+          <div className="accounDiv222" onClick={openEditUserModal}>
             <FaEdit />
           </div>
         </div>
       </div>
       <div className="accountDiv3">
         <div className="accountDiv31">
-          <h3>Portfolio Items</h3>
+          <div className="portfolioHeader">
+            <h3>Portfolio Items</h3>
+            <FaEdit
+              className="editIcon"
+              onClick={() => openEditPortfolioModal(null)}
+            />
+          </div>
+          <div className="portfolioItems">
+            {portfolioItems.length === 0 ? (
+              <p>No portfolio work to show.</p>
+            ) : (
+              portfolioItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="portfolioItem"
+                  onClick={() => openModal(item)}
+                >
+                  <h4>{item.title}</h4>
+                  <FaEdit
+                    className="editIcon"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openEditPortfolioModal(item);
+                    }}
+                  />
+                </div>
+              ))
+            )}
+          </div>
         </div>
         <div className="accountDiv32">
           <div className="accountDiv321">
-            <h3>My Skills</h3>
+            <div className="skillsHeader">
+              <h3>My Skills</h3>
+              <FaEdit className="editIcon" onClick={openEditSkillsModal} />
+            </div>
+            <ul>
+              {skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
           </div>
           <div className="accountDiv322">
             <h3>My Recommendations</h3>
+            <p>{recommendations} recommendations</p>
           </div>
         </div>
       </div>
+      {selectedPortfolio && (
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+          <div className="modalContent">
+            <h2>{selectedPortfolio.title}</h2>
+            <img src={selectedPortfolio.image} alt={selectedPortfolio.title} />
+            <p>{selectedPortfolio.description}</p>
+            <p>
+              <strong>Technologies Used:</strong>{" "}
+              {selectedPortfolio.technologies.join(", ")}
+            </p>
+            <a
+              href={selectedPortfolio.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </a>
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </Modal>
+      )}
+      <Modal isOpen={editUserModalOpen} onRequestClose={closeEditUserModal}>
+        <div className="modalContent">
+          <h2>Edit User Details</h2>
+          <form>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={userDetails.name}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type="text"
+                name="email"
+                value={userDetails.email}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Industry:
+              <input
+                type="text"
+                name="industry"
+                value={userDetails.industry}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Date of Birth:
+              <input
+                type="text"
+                name="dob"
+                value={userDetails.dob}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Bio:
+              <textarea
+                name="bio"
+                value={userDetails.bio}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Attachment:
+              <input
+                type="text"
+                name="attachment"
+                value={userDetails.attachment}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+          </form>
+          <button onClick={closeEditUserModal}>Close</button>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={editPortfolioModalOpen}
+        onRequestClose={closeEditPortfolioModal}
+      >
+        <div className="modalContent">
+          <h2>Edit Portfolio Item</h2>
+          <form>
+            <label>
+              Title:
+              <input
+                type="text"
+                name="title"
+                value={selectedPortfolio?.title || ""}
+                onChange={handlePortfolioChange}
+              />
+            </label>
+            <label>
+              Description:
+              <textarea
+                name="description"
+                value={selectedPortfolio?.description || ""}
+                onChange={handlePortfolioChange}
+              />
+            </label>
+            <label>
+              Link:
+              <input
+                type="text"
+                name="link"
+                value={selectedPortfolio?.link || ""}
+                onChange={handlePortfolioChange}
+              />
+            </label>
+            <label>
+              Technologies:
+              <input
+                type="text"
+                name="technologies"
+                value={selectedPortfolio?.technologies.join(", ") || ""}
+                onChange={(e) =>
+                  handlePortfolioChange({
+                    target: {
+                      name: "technologies",
+                      value: e.target.value.split(", "),
+                    },
+                  })
+                }
+              />
+            </label>
+          </form>
+          <button onClick={savePortfolioChanges}>Save Changes</button>
+          <button onClick={closeEditPortfolioModal}>Close</button>
+        </div>
+      </Modal>
+      <Modal isOpen={editSkillsModalOpen} onRequestClose={closeEditSkillsModal}>
+        <div className="modalContent">
+          <h2>Edit Skills</h2>
+          <form>
+            {skills.map((skill, index) => (
+              <label key={index}>
+                Skill {index + 1}:
+                <input
+                  type="text"
+                  value={skill}
+                  onChange={(e) => handleSkillsChange(index, e.target.value)}
+                />
+              </label>
+            ))}
+          </form>
+          <button onClick={closeEditSkillsModal}>Close</button>
+        </div>
+      </Modal>
     </div>
   );
 };
