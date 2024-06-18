@@ -27,16 +27,16 @@ const Header1 = ({ clicked, setClicked }) => {
       </div>
 
       <div className="navList">
-        <NavLink to="/about" style={{ textDecoration: "none" }}>
+        <NavLink to="/" style={{ textDecoration: "none" }}>
           <h3 className="navItems"> Home</h3>
         </NavLink>
-        <NavLink to="/about" style={{ textDecoration: "none" }}>
+        <NavLink to="/notfound" style={{ textDecoration: "none" }}>
           <h3 className="navItems"> About</h3>
         </NavLink>
-        <NavLink to="/termsofuse" style={{ textDecoration: "none" }}>
+        <NavLink to="/notfound" style={{ textDecoration: "none" }}>
           <h3 className="navItems"> Features </h3>
         </NavLink>
-        <NavLink to="/riskwarning" style={{ textDecoration: "none" }}>
+        <NavLink to="/notfound" style={{ textDecoration: "none" }}>
           <h3 className="navItems"> Blog</h3>
         </NavLink>
       </div>

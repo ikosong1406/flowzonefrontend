@@ -14,6 +14,7 @@ import Chat from "./pages/Chat";
 import Settings from "./pages/Settings";
 import Progress from "./pages/Progress";
 import Account from "./pages/Accounts";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -56,6 +57,14 @@ const App = () => {
                   element={
                     <Layout1>
                       <Landing />
+                    </Layout1>
+                  }
+                />
+                <Route
+                  path="/notfound"
+                  element={
+                    <Layout1>
+                      <NotFound />
                     </Layout1>
                   }
                 />

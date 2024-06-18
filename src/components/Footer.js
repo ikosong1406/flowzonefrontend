@@ -24,22 +24,22 @@ const Footer = () => {
         <div className="footerDiv4">
           <div className="footerDiv3">
             <h2 className="legal">Quick Links</h2>
-            <Link to="/privacypolicy" className="legal1">
+            <Link to="/notfound" className="legal1">
               About
             </Link>
-            <Link to="/termsofuse" className="legal1">
+            <Link to="/notfound" className="legal1">
               Features
             </Link>
           </div>
           <div className="footerDiv3">
             <h2 className="legal">Legal</h2>
-            <Link to="/security" className="legal1">
+            <Link to="/notfound" className="legal1">
               Security
             </Link>
-            <Link to="/riskwarning" className="legal1">
+            <Link to="/notfound" className="legal1">
               Risk Warning
             </Link>
-            <Link to="/riskwarning" className="legal1">
+            <Link to="/notfound" className="legal1">
               Privacy Policy
             </Link>
           </div>
@@ -47,13 +47,13 @@ const Footer = () => {
         <div className="footerDiv4">
           <div className="footerDiv3">
             <h2 className="legal">Help</h2>
-            <Link to="/faq" className="legal1">
+            <Link to="/notfound" className="legal1">
               FAQ
             </Link>
           </div>
           <div className="footerDiv3">
             <h2 className="legal">Reach Us</h2>
-            <Link to="/about" className="legal1">
+            <Link to="/notfound" className="legal1">
               Blogs
             </Link>
           </div>

@@ -1,0 +1,27 @@
+/* src/NotFound.css */
+.not-found-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  /* background-color: #f8f9fa; */
+  color: #343a40;
+}
+
+.not-found-image {
+  max-width: 100%;
+  height: auto;
+  /* margin-bottom: 20px; */
+  margin-top: 30px;
+}
+
+.not-found-title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.not-found-description {
+  font-size: 1.5rem;
+}
