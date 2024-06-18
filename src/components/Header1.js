@@ -21,7 +21,7 @@ const Header1 = ({ clicked, setClicked }) => {
         <NavLink to="/" className="logoDiv">
           <img src={logo} className="logoImage" />
           <h1 className="logoName">
-            <span style={{ color: "#33067B" }}>Flow</span>Zone
+            <span style={{ color: "#0070C0" }}>Flow</span>Zone
           </h1>
         </NavLink>
       </div>

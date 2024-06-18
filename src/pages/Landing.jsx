@@ -44,8 +44,8 @@ const Landing = () => {
             <div className="landDiv1">
               <div className="landDiv11">
                 <h1>
-                  Your <span style={{ color: "#33067B" }}>Network</span> is Your{" "}
-                  <span style={{ color: "#33067B" }}>Networth</span>
+                  Your <span style={{ color: "#0070C0" }}>Network</span> is Your{" "}
+                  <span style={{ color: "#0070C0" }}>Networth</span>
                 </h1>
                 <h2>
                   Join the ultimate platform for developers to build their
@@ -115,7 +115,7 @@ const Landing = () => {
               <div className="landDiv31">
                 <div className="landDiv311">
                   <h1>
-                    Connect <span style={{ color: "#33067B" }}>Developers</span>
+                    Connect <span style={{ color: "#0070C0" }}>Developers</span>
                   </h1>
                   <h3>
                     Flowzone connects developers from various roles and skill
@@ -152,7 +152,7 @@ const Landing = () => {
                 <div className="landDiv311">
                   <h1>
                     Facilitate Project{" "}
-                    <span style={{ color: "#33067B" }}>Collaboration</span>
+                    <span style={{ color: "#0070C0" }}>Collaboration</span>
                   </h1>
                   <h3>
                     Flowzone facilitate project collaboration by providing a
@@ -187,7 +187,7 @@ const Landing = () => {
               <div className="landDiv41">
                 <h1>
                   What They Say{" "}
-                  <span style={{ color: "#33067B" }}>About Us</span>
+                  <span style={{ color: "#0070C0" }}>About Us</span>
                 </h1>
               </div>
               <div className="landDiv42">
@@ -275,7 +275,7 @@ const Landing = () => {
                 <div className="landDiv441">
                   <h1>
                     Whats new at{" "}
-                    <span style={{ color: "#33067B" }}>Flowzone</span>?
+                    <span style={{ color: "#0070C0" }}>Flowzone</span>?
                   </h1>
                   <Link>See all</Link>
                 </div>

@@ -12,7 +12,7 @@ const Footer = () => {
           <NavLink to="/" className="logoDiv1">
             <img src={logo} className="logoImage1" />
             <h1 className="logoName1">
-              <span style={{ color: "#33067B" }}>Flow</span>Zone
+              <span style={{ color: "#0070C0" }}>Flow</span>Zone
             </h1>
           </NavLink>
           <h4>

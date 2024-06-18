@@ -12,7 +12,7 @@ const Header = () => {
         <div className="headerDiv11">
           <img src={logo} />
           <h1>
-            <span style={{ color: "#33067B" }}>Flow</span>Zone
+            <span style={{ color: "#0070C0" }}>Flow</span>Zone
           </h1>
         </div>
         <div className="headerDiv12">

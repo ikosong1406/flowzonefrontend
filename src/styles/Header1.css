@@ -49,7 +49,7 @@
 }
 
 .signBtn {
-  background-color: #33067b;
+  background-color: #0070c0;
   color: var(--white);
   padding: 10px;
   font-size: 14px;
@@ -59,54 +59,4 @@
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
-}
-
-@media screen and (max-width: 925px) {
-  .Icon {
-    display: inline;
-    position: relative;
-    padding-right: 70px;
-  }
-
-  .head1Div1 {
-    width: 100%;
-    height: 32px;
-    position: fixed;
-    z-index: 99;
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-  }
-
-  .logoImage {
-    width: 30px;
-    height: 30px;
-  }
-
-  .logoName {
-    font-size: 12px;
-    margin-left: 0px;
-  }
-
-  .navList {
-    display: flex;
-    margin-right: 20px;
-    margin-left: 25px;
-  }
-
-  .navItems {
-    font-size: 10px;
-    width: 25%;
-  }
-
-  .authLinks {
-    align-self: center;
-    width: 25%;
-  }
-
-  .signBtn {
-    padding: 8px;
-    font-size: 10px;
-    margin-left: 25px;
-  }
 }
