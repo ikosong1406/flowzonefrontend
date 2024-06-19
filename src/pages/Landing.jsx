@@ -7,11 +7,8 @@ import img from "../images/puzzle.png";
 import create from "../images/create.png";
 import get from "../images/get.png";
 import join from "../images/join.png";
-import arrow from "../images/arrow.png";
 import bulb from "../images/bulb.png";
 import connect from "../images/connect.png";
-import cube from "../images/cube.png";
-import gear from "../images/gear.png";
 import person from "../images/person.jpeg";
 import team from "../images/team.png";
 

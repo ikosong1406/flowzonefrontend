@@ -3,18 +3,7 @@ import "../styles/Header1.css";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo.png";
 
-const Header1 = ({ clicked, setClicked }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [profileModal, setProfile] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
-  const Profile = () => {
-    setProfile(!profileModal);
-  };
-
+const Header1 = () => {
   return (
     <div className="head1Div1">
       <div>

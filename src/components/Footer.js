@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footerDiv2">
         <div className="footerDiv5">
           <NavLink to="/" className="logoDiv1">
-            <img src={logo} className="logoImage1" />
+            <img src={logo} className="logoImage1" alt="logo" />
             <h1 className="logoName1">
               <span style={{ color: "#0070C0" }}>Flow</span>Zone
             </h1>

@@ -63,12 +63,6 @@ const Chat = () => {
     const newMessages = [...messages, { sender: "me", text: message }];
     setMessages(newMessages);
 
-    // Update the last message in the group's data
-    const updatedGroups = groups.map((g) =>
-      g.id === selectedGroup.id
-        ? { ...g, lastMessage: message, messages: newMessages }
-        : g
-    );
     setSelectedGroup({
       ...selectedGroup,
       lastMessage: message,

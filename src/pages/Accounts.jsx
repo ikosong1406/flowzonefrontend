@@ -121,9 +121,7 @@ const Accounts = () => {
     setEditSkillsModalOpen(false);
   };
 
-  const handleUserDetailsChange = (e) => {
-    const { name, value } = e.target;
-  };
+  const handleUserDetailsChange = (e) => {};
 
   const handleSkillsChange = (index, value) => {
     const updatedSkills = skills.map((skill, i) =>
