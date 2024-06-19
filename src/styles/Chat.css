@@ -57,11 +57,17 @@
   color: white;
   align-self: flex-end;
   margin-left: auto;
+  padding-top: 3px;
+}
+
+.my-message h3 {
+  display: none;
 }
 
 .other-message {
   background-color: gainsboro;
   color: black;
+  padding-top: 3px;
 }
 
 .message-input {
@@ -84,7 +90,7 @@
 .send-icon {
   font-size: 20px;
   cursor: pointer;
-  color: #33067b;
+  color: #0040ff;
 }
 
 .attachment-icon {

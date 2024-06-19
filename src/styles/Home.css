@@ -25,15 +25,19 @@
 }
 
 .homeDiv212 {
-  background-color: var(--white);
-  padding: 20px;
-  display: flex;
+  /* padding: 20px; */
+  /* display: flex; */
   border-radius: 10px;
   overflow-y: auto; /* Make it scrollable */
-  max-height: 300px; /* Adjust height as needed */
+  max-height: 500px; /* Adjust height as needed */
 }
 
 .homeDiv2121 {
+  display: flex;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .homeDiv2121 img {
@@ -67,6 +71,7 @@
   background-color: #c8c8c8;
   padding: 7px;
   border-radius: 10px;
+  font-size: 12px;
 }
 
 .actionButton {

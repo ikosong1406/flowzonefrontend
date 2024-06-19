@@ -11,11 +11,15 @@ import {
 import axios from "axios";
 import BackendApi from "../Api/BackendApi";
 import { getUserToken } from "../Api/storage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const [showMoreDetails, setShowMoreDetails] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -46,22 +50,48 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    // console.log(userData); // This will log the updated userData
-  }, [userData]); // Run this effect whenever userData changes;
+    // Simulate fetching project data from backend
+    const dummyProjects = [
+      {
+        id: 1,
+        name: "Project Alpha",
+        tag: "Web Development",
+        description:
+          "A comprehensive project focusing on full-stack web development.",
+        technologies: ["HTML", "CSS", "JavaScript", "React"],
+      },
+      {
+        id: 2,
+        name: "Project Beta",
+        tag: "Mobile Development",
+        description:
+          "A mobile app project targeting both iOS and Android platforms.",
+        technologies: ["JavaScript", "React Native"],
+      },
+      {
+        id: 3,
+        name: "Project Gamma",
+        tag: "Data Science",
+        description:
+          "A data science project involving data analysis and machine learning.",
+        technologies: ["Python", "Pandas", "Scikit-learn"],
+      },
+    ];
+    setProjects(dummyProjects);
+  }, []);
 
   const handleRefresh = async () => {
     setRefreshing(true);
     await getData(token);
   };
 
-  const [showMoreDetails, setShowMoreDetails] = useState(false);
-
-  const handleMoreDetailsClick = () => {
-    setShowMoreDetails(!showMoreDetails);
+  const handleJoinProject = (projectId) => {
+    toast.success(`Request to join project ${projectId} is successful`);
   };
 
   return (
     <div className="homeMain">
+      <ToastContainer />
       <div className="homeDiv1">
         <h1>
           Welcome, {userData.firstname} {userData.lastname}
@@ -74,49 +104,34 @@ const Home = () => {
             <h3>Recent collaboration offers for you</h3>
           </div>
           <div className="homeDiv212">
-            <div className="homeDiv2121">
-              <img src={cube} alt="Project Icon" />
-            </div>
-            <div className="homeDiv2122">
-              <h2>Project Name</h2>
-              <div className="homeDiv21221">
-                <p style={{ color: "#a09e9e", marginTop: -5 }}>
-                  <IoPricetag style={{ marginRight: 5 }} />
-                  Web Development
-                </p>
-                <p style={{ color: "#a09e9e", marginTop: -5 }}>
-                  <IoPricetag style={{ marginRight: 5 }} />
-                  Web Development
-                </p>
-                <p style={{ color: "#a09e9e", marginTop: -5 }}>
-                  <IoPricetag style={{ marginRight: 5 }} />
-                  Web Development
-                </p>
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-                labore voluptatem quia dolorum harum, nostrum blanditiis
-                expedita, obcaecati, id exercitationem eaque rem! Corporis
-                dolore voluptatum deleniti dolorum quisquam distinctio soluta.
-              </h3>
-              <div className="homeDiv21222">
-                <h3>React Native</h3>
-                <h3>React Native</h3>
-              </div>
-              <button className="actionButton" onClick={handleMoreDetailsClick}>
-                {showMoreDetails ? "Show Less Details" : "More Details"}
-              </button>
-              {showMoreDetails && (
-                <div className="moreDetails">
-                  <p>
-                    Molestias possimus non sint explicabo, atque aliquam
-                    delectus inventore ipsa saepe eligendi itaque minus, animi
-                    laborum neque fugit facere? Totam.
-                  </p>
-                  <button className="joinButton">Join Project</button>
+            {projects.map((project) => (
+              <div key={project.id} className="homeDiv2121">
+                <div>
+                  <img src={cube} alt="Project Icon" />
                 </div>
-              )}
-            </div>
+                <div className="homeDiv2122">
+                  <h2>{project.name}</h2>
+                  <div className="homeDiv21221">
+                    <p style={{ color: "#a09e9e", marginTop: -5 }}>
+                      <IoPricetag style={{ marginRight: 5 }} />
+                      {project.tag}
+                    </p>
+                  </div>
+                  <h3>{project.description}</h3>
+                  <div className="homeDiv21222">
+                    {project.technologies.map((tech, index) => (
+                      <h3 key={index}>{tech}</h3>
+                    ))}
+                  </div>
+                  <button
+                    className="actionButton"
+                    onClick={() => handleJoinProject(project.name)}
+                  >
+                    Join Project
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="homeDiv22">

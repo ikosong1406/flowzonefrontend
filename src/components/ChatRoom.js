@@ -57,7 +57,8 @@ const ChatRoom = ({ group, messages, onSendMessage }) => {
               msg.sender === "me" ? "my-message" : "other-message"
             }`}
           >
-            {msg.text}
+            <h3>{msg.sender}</h3>
+            <p>{msg.text}</p>
           </div>
         ))}
         <div ref={messagesEndRef} />

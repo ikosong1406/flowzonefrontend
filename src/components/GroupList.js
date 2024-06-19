@@ -21,7 +21,7 @@ const GroupList = ({ groups, onSelectGroup }) => {
               src={cube}
               alt=""
               style={{
-                width: 50,
+                width: 40,
                 borderRadius: 100,
                 padding: 5,
                 border: "1px solid gray",
@@ -29,7 +29,7 @@ const GroupList = ({ groups, onSelectGroup }) => {
               }}
             />
           </div>
-          <div style={{ marginLeft: 5 }}>
+          <div style={{ marginLeft: 10 }}>
             <h3
               style={{ marginTop: -5, alignSelf: "center", color: "#252626" }}
             >
