@@ -25,11 +25,9 @@
 }
 
 .homeDiv212 {
-  /* padding: 20px; */
-  /* display: flex; */
   border-radius: 10px;
-  overflow-y: auto; /* Make it scrollable */
-  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto;
+  max-height: 500px;
 }
 
 .homeDiv2121 {

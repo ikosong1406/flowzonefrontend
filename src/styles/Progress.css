@@ -30,8 +30,15 @@
 
 .progressDiv21 {
   width: 55%;
-  background-color: var(--white);
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.progressDiv211 {
+  background-color: white;
   padding: 20px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 

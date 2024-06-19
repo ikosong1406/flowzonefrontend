@@ -164,11 +164,11 @@ const Accounts = () => {
             </h2>
             <p style={{ color: "#a09e9e", marginTop: -5 }}>
               <IoPricetag />
-              <span style={{ marginLeft: 10 }}>none</span>
+              <span style={{ marginLeft: 10 }}>{userData.role}</span>
             </p>
-            <h3>Collaboration Done: 26</h3>
+            <h3>Collaboration Done: {userData.collaboration}</h3>
             <h3>Bio:</h3>
-            <p style={{ marginTop: -10 }}>none</p>
+            <p style={{ marginTop: -10 }}>{userData.bio}</p>
           </div>
         </div>
         <div className="accountDiv22">
@@ -186,21 +186,21 @@ const Accounts = () => {
                 <MdOutlineWork style={{ marginRight: 5 }} />
                 Industry:
               </h3>
-              <h3>none</h3>
+              <h3>{userData.industry}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaCalendarAlt style={{ marginRight: 5 }} />
                 Date of Birth:
               </h3>
-              <h3>none</h3>
+              <h3>{userData.dob}</h3>
             </div>
             <div className="accountDiv2211">
               <h3>
                 <FaFilePdf style={{ marginRight: 5, color: "red" }} />
                 Attachment:
               </h3>
-              <h3>none</h3>
+              <h3>{userData.attachment}</h3>
             </div>
           </div>
           <div className="accounDiv222" onClick={openEditUserModal}>
@@ -286,11 +286,20 @@ const Accounts = () => {
           <h2>Edit User Details</h2>
           <form>
             <label>
-              Name:
+              Firstname:
               <input
                 type="text"
                 name="name"
-                // value={userDetails.name}
+                value={userData.firstname}
+                onChange={handleUserDetailsChange}
+              />
+            </label>
+            <label>
+              Lastname:
+              <input
+                type="text"
+                name="name"
+                value={userData.lastname}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -299,7 +308,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="email"
-                // value={userDetails.email}
+                value={userData.email}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -308,7 +317,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="industry"
-                // value={userDetails.industry}
+                value={userData.industry}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -317,7 +326,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="dob"
-                // value={userDetails.dob}
+                value={userData.dob}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -325,7 +334,7 @@ const Accounts = () => {
               Bio:
               <textarea
                 name="bio"
-                // value={userDetails.bio}
+                value={userData.bio}
                 onChange={handleUserDetailsChange}
               />
             </label>
@@ -334,7 +343,7 @@ const Accounts = () => {
               <input
                 type="text"
                 name="attachment"
-                // value={userDetails.attachment}
+                value={userData.attachment}
                 onChange={handleUserDetailsChange}
               />
             </label>

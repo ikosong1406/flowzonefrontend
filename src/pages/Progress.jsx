@@ -1,7 +1,7 @@
 // src/Progress.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaPlusSquare, FaCheck, FaTimes } from "react-icons/fa";
+import { FaPlus, FaCheck, FaTimes } from "react-icons/fa";
 import { IoPricetag } from "react-icons/io5";
 import "../styles/Progress.css";
 
@@ -36,7 +36,7 @@ const Progress = () => {
         tag: "Mobile Development",
         description:
           "A mobile app project targeting both iOS and Android platforms.",
-        skills: ["JavaScript", "React Native", "React Native", "Firebase"],
+        skills: ["JavaScript", "React Native", "Firebase"],
       },
       {
         id: 3,
@@ -96,7 +96,7 @@ const Progress = () => {
       <div className="progressDiv1">
         <h1>Projects</h1>
         <button onClick={handleCreateProject}>
-          <FaPlusSquare style={{ marginRight: 10, alignSelf: "center" }} />
+          <FaPlus style={{ marginRight: 10, alignSelf: "center" }} />
           Create New Project
         </button>
       </div>
@@ -107,7 +107,7 @@ const Progress = () => {
             <div
               key={project.id}
               onClick={() => navigateToProjectDashboard(project.id)}
-              className="project-card"
+              className="progressDiv211"
             >
               <h3>{project.name}</h3>
               <div className="homeDiv21221">
@@ -135,14 +135,40 @@ const Progress = () => {
                 <IoPricetag style={{ marginRight: 5 }} />
                 {invite.tag}
               </p>
-              <button onClick={() => handleAcceptInvite(invite.id)}>
-                <FaCheck style={{ marginRight: 5 }} />
-                Accept
-              </button>
-              <button onClick={() => handleDeclineInvite(invite.id)}>
-                <FaTimes style={{ marginRight: 5 }} />
-                Decline
-              </button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: 20,
+                }}
+              >
+                <button
+                  onClick={() => handleAcceptInvite(invite.id)}
+                  style={{
+                    backgroundColor: "green",
+                    border: "none",
+                    padding: 5,
+                    borderRadius: 5,
+                    color: "white",
+                  }}
+                >
+                  <FaCheck style={{ marginRight: 5 }} />
+                  Accept
+                </button>
+                <button
+                  onClick={() => handleDeclineInvite(invite.id)}
+                  style={{
+                    backgroundColor: "red",
+                    border: "none",
+                    padding: 5,
+                    borderRadius: 5,
+                    color: "white",
+                  }}
+                >
+                  <FaTimes style={{ marginRight: 5 }} />
+                  Decline
+                </button>
+              </div>
             </div>
           ))}
         </div>
