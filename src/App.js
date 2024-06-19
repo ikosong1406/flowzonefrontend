@@ -15,6 +15,7 @@ import Settings from "./pages/Settings";
 import Progress from "./pages/Progress";
 import Account from "./pages/Accounts";
 import NotFound from "./pages/NotFound";
+import ProjectDashboard from "./pages/ProjectDashboard";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -74,6 +75,7 @@ const App = () => {
                   <Route index element={<Home />} />
                   <Route path="chat" element={<Chat />} />
                   <Route path="progress" element={<Progress />} />
+                  <Route path="projectId" element={<ProjectDashboard />} />
                   <Route path="settings" element={<Settings />} />
                   <Route path="account" element={<Account />} />
                 </Route>

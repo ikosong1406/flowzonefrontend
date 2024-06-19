@@ -1,0 +1,34 @@
+/* src/styles/ProjectDashboard.css */
+.projectDashboard {
+  padding: 20px;
+}
+
+.teamMembersSection,
+.tasksSection {
+  margin-top: 20px;
+}
+
+/* Additional styles as needed */
+
+/* src/styles/Progress.css */
+.progressMain {
+  padding: 20px;
+}
+
+.progressDiv1,
+.progressDiv2 {
+  margin-bottom: 20px;
+}
+
+.project-card,
+.invite-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.project-card:hover,
+.invite-card:hover {
+  background-color: #f0f0f0;
+}
