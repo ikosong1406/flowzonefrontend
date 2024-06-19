@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/Home.css";
 import cube from "../images/cube.png";
 import {
@@ -21,19 +21,7 @@ const Home = () => {
   const [projects, setProjects] = useState([]);
   const [showMoreDetails, setShowMoreDetails] = useState(false);
 
-  const fetchData = async () => {
-    try {
-      const userToken = await getUserToken();
-      setToken(userToken);
-      if (userToken) {
-        await getData(userToken);
-      }
-    } catch (error) {
-      console.error("Error retrieving token:", error);
-    }
-  };
-
-  const getData = async (userToken) => {
+  const getData = useCallback(async (userToken) => {
     const data = { token: userToken };
     try {
       const response = await axios.post(`${BackendApi}/userdata`, data);
@@ -43,11 +31,23 @@ const Home = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    try {
+      const userToken = await getUserToken();
+      setToken(userToken);
+      if (userToken) {
+        await getData(userToken);
+      }
+    } catch (error) {
+      console.error("Error retrieving token:", error);
+    }
+  }, [getData]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
     // Simulate fetching project data from backend
