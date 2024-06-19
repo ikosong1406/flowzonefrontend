@@ -9,6 +9,7 @@ import get from "../images/get.png";
 import join from "../images/join.png";
 import bulb from "../images/bulb.png";
 import connect from "../images/connect.png";
+import gear from "../images/gear.png";
 import person from "../images/person.jpeg";
 import team from "../images/team.png";
 
