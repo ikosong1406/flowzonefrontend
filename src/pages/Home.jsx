@@ -19,7 +19,6 @@ const Home = () => {
   const [token, setToken] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [showMoreDetails, setShowMoreDetails] = useState(false);
 
   const getData = useCallback(async (userToken) => {
     const data = { token: userToken };

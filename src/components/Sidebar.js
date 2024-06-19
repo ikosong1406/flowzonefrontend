@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/Sidebar.css";
 import { NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
@@ -15,19 +15,7 @@ const Sidebar = () => {
   const [token, setToken] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
 
-  const fetchData = async () => {
-    try {
-      const userToken = await getUserToken();
-      setToken(userToken);
-      if (userToken) {
-        await getData(userToken);
-      }
-    } catch (error) {
-      console.error("Error retrieving token:", error);
-    }
-  };
-
-  const getData = async (userToken) => {
+  const getData = useCallback(async (userToken) => {
     const data = { token: userToken };
     try {
       const response = await axios.post(`${BackendApi}/userdata`, data);
@@ -37,11 +25,23 @@ const Sidebar = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    try {
+      const userToken = await getUserToken();
+      setToken(userToken);
+      if (userToken) {
+        await getData(userToken);
+      }
+    } catch (error) {
+      console.error("Error retrieving token:", error);
+    }
+  }, [getData]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {}, [userData]);
 

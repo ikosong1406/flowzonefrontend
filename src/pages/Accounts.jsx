@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/Accounts.css";
 import person from "../images/usericon.jpeg";
 import { IoPricetag } from "react-icons/io5";
@@ -50,19 +50,7 @@ const Accounts = () => {
   const [token, setToken] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
 
-  const fetchData = async () => {
-    try {
-      const userToken = await getUserToken();
-      setToken(userToken);
-      if (userToken) {
-        await getData(userToken);
-      }
-    } catch (error) {
-      console.error("Error retrieving token:", error);
-    }
-  };
-
-  const getData = async (userToken) => {
+  const getData = useCallback(async (userToken) => {
     const data = { token: userToken };
     try {
       const response = await axios.post(`${BackendApi}/userdata`, data);
@@ -72,18 +60,29 @@ const Accounts = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    try {
+      const userToken = await getUserToken();
+      setToken(userToken);
+      if (userToken) {
+        await getData(userToken);
+      }
+    } catch (error) {
+      console.error("Error retrieving token:", error);
+    }
+  }, [getData]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   useEffect(() => {
-    // Check if userData exists and has firstname before accessing it
     if (userData && userData.firstname) {
       console.log("First Name:", userData.firstname);
     }
-  }, [userData]); // Run this effect whenever userData changes
+  }, [userData]);
 
   const openModal = (portfolio) => {
     setSelectedPortfolio(portfolio);
